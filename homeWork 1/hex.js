@@ -46,7 +46,6 @@
             getNewValue = getNewValue.replace(")", "");
             getNewValue = getNewValue.trim();
             getNewValue = getNewValue.split(",");
-            console.log(getNewValue);
           }
 
          const rgbValue = rgbToHex(getNewValue[0], getNewValue[1], getNewValue[2]);

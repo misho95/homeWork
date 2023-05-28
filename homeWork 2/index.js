@@ -94,6 +94,63 @@ const data = [
   
   // . დაწერეთ ფუნქცია highestsales რომელიც უკან დააბრუნებს ახალ მასივს სადაც გვექნება მხოლოდ ის გაყუდვები რომელთა თანხაც 80 ზე მეტია
   
+
+
+ const sort_by_sales = (e) => {
+    const sort = e.sort( (a,b) => {
+      return  b.total_sales - a.total_sales;
+    })
+    return sort;
+ }
+
+
+ const res = sort_by_sales(users);
+
+
+ // console.log(res);
+
+
+
+const generatefullname = (e) => {
+    const map = e.map( (user) => {
+      const fullname = user.name + " " + user.surname;
+      user.fullName = fullname;
+      return user;
+    })
+    return map;
+}
+
+const fullNameResult = generatefullname(users);
+
+// console.log(fullNameResult);
+
+
+const highestsales = (e) => {
+  const filterd = e.filter( (user) => {
+    if(user.total_sales > 80){
+      return user;
+    }
+  });
+  return filterd;
+}
+
+const highestsalesResutl = highestsales(users);
+
+// console.log(highestsalesResutl);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // დავალება 3:
   // 1. გამოითხოვეთ სია პოსტების  https://jsonplaceholder.typicode.com/posts
   // 2. წაიკითხეთ json დატა response ობიექტიდან

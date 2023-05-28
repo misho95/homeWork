@@ -39,6 +39,8 @@
                 console.log("ასაკი: ", age.value);
                 console.log("დასაქმების სტატუსი: ", emp);
                 console.log("ემაილი: ",email.value);
+
+                form.reset();
            
             
     })
