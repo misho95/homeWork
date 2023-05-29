@@ -151,23 +151,24 @@ const highestsalesResutl = highestsales(users);
   // 4. შეიტანეთ თითოეული პოსტი body ელემენტში
   
 
-  fetch('https://jsonplaceholder.typicode.com/posts')
-  .then( (respons) => respons.json())
-  .then( (data) => data );
+  const fetchData = async () => {
+    const respons = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await respons.json();
 
-  console.log(data);
+    let map = data.map( (e) => {
+          return `<div>
+          <div>${e.id}</div>
+          <h1>${e.title}</h1>
+          <p>category: ${e.body}</p>
+          </div>`;
+      });
 
+      map = map.join('');
 
- let map = data.map( (e) => {
-      return `<div>
-      <div>${e.id}</div>
-      <h1>${e.title}</h1>
-      <p>category: ${e.category} views: ${e.views}</p>
-      </div>`;
-  });
+      const body = document.querySelector(`body`);
 
-  map = map.join('');
+      body.innerHTML = map;
+  }
+  
 
-  const body = document.querySelector(`body`);
-
-  body.innerHTML = map;
+  fetchData();
