@@ -139,18 +139,6 @@ const highestsalesResutl = highestsales(users);
 // console.log(highestsalesResutl);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   // დავალება 3:
   // 1. გამოითხოვეთ სია პოსტების  https://jsonplaceholder.typicode.com/posts
   // 2. წაიკითხეთ json დატა response ობიექტიდან
@@ -162,3 +150,24 @@ const highestsalesResutl = highestsales(users);
   // </div>
   // 4. შეიტანეთ თითოეული პოსტი body ელემენტში
   
+
+  fetch('https://jsonplaceholder.typicode.com/posts')
+  .then( (respons) => respons.json())
+  .then( (data) => data );
+
+  console.log(data);
+
+
+ let map = data.map( (e) => {
+      return `<div>
+      <div>${e.id}</div>
+      <h1>${e.title}</h1>
+      <p>category: ${e.category} views: ${e.views}</p>
+      </div>`;
+  });
+
+  map = map.join('');
+
+  const body = document.querySelector(`body`);
+
+  body.innerHTML = map;
