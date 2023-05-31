@@ -112,17 +112,18 @@ const data = [
 
 
 const generatefullname = (e) => {
-    const map = e.map( (user) => {
-      const fullname = user.name + " " + user.surname;
-      user.fullName = fullname;
-      return user;
+   const map =  e.map( (user) => {
+      return {
+        ...user,
+        fullName : user.name + " " + user.surname,
+      }
     })
     return map;
 }
 
 const fullNameResult = generatefullname(users);
 
-// console.log(fullNameResult);
+ console.log(fullNameResult);
 
 
 const highestsales = (e) => {
