@@ -41,6 +41,9 @@ const deletePost = () => {
             });
 
             })
+
+           
+
     })
 }
    
@@ -62,7 +65,7 @@ const deletePost = () => {
         map = map.join('');
         document.body.innerHTML = map;
         editPost();
-
+        deletePost();
     });
 
 
